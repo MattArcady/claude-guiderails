@@ -17,17 +17,27 @@ A reusable collection of `CLAUDE.md` guardrails for software development teams w
 
 ### 1. Copy the guardrails you need
 
-Pick the files relevant to your stack and copy them into your project, preserving the folder structure:
+Place the root `CLAUDE.md` in your project root. Then place the language/framework-specific `CLAUDE.md` files in the directory where that code lives — Claude Code automatically picks up `CLAUDE.md` files in subdirectories and applies them to files within that scope.
 
 ```bash
-# Example: React + TypeScript project
+# Example: Angular project
 cp claude-guiderails/CLAUDE.md ./CLAUDE.md
-mkdir -p typescript react
+mkdir -p typescript
 cp claude-guiderails/typescript/CLAUDE.md ./typescript/CLAUDE.md
-cp claude-guiderails/react/CLAUDE.md ./react/CLAUDE.md
+cp claude-guiderails/angular/CLAUDE.md ./src/app/CLAUDE.md
+
+# Example: React + TypeScript project (e.g. Next.js)
+cp claude-guiderails/CLAUDE.md ./CLAUDE.md
+mkdir -p typescript
+cp claude-guiderails/typescript/CLAUDE.md ./typescript/CLAUDE.md
+cp claude-guiderails/react/CLAUDE.md ./src/CLAUDE.md
+
+# Example: .NET project
+cp claude-guiderails/CLAUDE.md ./CLAUDE.md
+cp claude-guiderails/dotnet/CLAUDE.md ./src/CLAUDE.md
 ```
 
-The root `CLAUDE.md` contains the general rules that apply to all projects. The framework-specific files supplement (not replace) the root file.
+The root `CLAUDE.md` contains the general rules that apply to all projects. The `typescript/CLAUDE.md` stays in its own `typescript/` folder — it is referenced by the Angular and React guardrails. The framework-specific files (Angular, React, .NET) go into the directory where the source code lives so Claude applies them in the right scope.
 
 ### 2. Add MCP server configuration
 
