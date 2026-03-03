@@ -90,6 +90,39 @@ This ensures the developer can think along, challenge assumptions, and steer the
 - Never use `--force`, `--no-verify`, or `--hard` flags without explicit user approval.
 - Never amend commits without explicit user approval.
 - When the user asks you to commit, follow the standard commit workflow (check status, diff, draft message, confirm).
+- **Commit message format**: `<type>: <description>` (max 50 characters).
+  - Types: `feat`, `fix`, `docs`, `refactor`, `chore`, `test`
+  - Example: `feat: add user profile page`
+  - The description should be lowercase, imperative mood, no period at the end.
+
+---
+
+## Safety Guardrails
+
+**CRITICAL: Never remove the following without explicit developer approval:**
+
+- Input validation and sanitization
+- Type guards and runtime type checks
+- Error handlers and try/catch blocks
+- Authentication and authorization checks
+- Rate limiting or throttling logic
+- Data validation schemas
+
+These are safety nets. Even if they seem redundant or overly cautious, they exist for a reason. If you believe one should be removed, explain why and ask for approval.
+
+---
+
+## Code Review Priority
+
+When reviewing or writing code, prioritize in this order:
+
+1. **Correctness** — Does it do what it's supposed to do?
+2. **Security** — Is it safe from attacks and data leaks?
+3. **Architecture** — Is it well-structured and maintainable?
+4. **Performance** — Is it efficient enough for the use case?
+5. **Style** — Is it clean, readable, and consistent?
+
+Never sacrifice a higher priority for a lower one. A fast but incorrect solution is worse than a slow but correct one.
 
 ---
 

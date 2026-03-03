@@ -1,6 +1,6 @@
 # Angular Development Guardrails
 
-These rules apply to Angular projects. They supplement the general guardrails in the root `CLAUDE.md`.
+These rules apply to Angular projects. They supplement the general guardrails in the root `CLAUDE.md` and the TypeScript guardrails in `typescript/CLAUDE.md` (which also apply to all Angular projects).
 
 ---
 
